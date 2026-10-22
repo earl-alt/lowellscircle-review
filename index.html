@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Lowell’s Circle · We’re looking</title>
+<meta name="description" content="We’re looking for people who like to make things. Get in Lowell’s Circle.">
+<meta name="theme-color" content="#f5f1e8">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Caveat:wght@500;600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#f-signup" id="skipLink">Skip to sign-up</a>
+<header class="bar">
+  <a class="mark" href="./">Lowell’s <b>Circle</b></a>
+  <nav><a href="circle.html">What’s the Circle?</a></nav>
+</header>
+
+<main class="stage" id="stage" aria-live="polite">
+  <!-- 1–2: a hand with a pencil draws a circle on a blank page -->
+  <section class="frame" id="f-draw" aria-label="A hand with a pencil draws a circle">
+    <div class="art">
+      <svg viewBox="-320 -320 640 640" aria-hidden="true">
+        <defs>
+          <filter id="pencil-tex"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/></filter>
+        </defs>
+        <circle id="sketch" r="262" fill="none" stroke="#2a2723" stroke-width="4.5" stroke-linecap="round" transform="rotate(-62)" filter="url(#pencil-tex)"/>
+      </svg>
+      <img id="hand" class="hand" src="assets/lowell-hand.webp" alt="" width="408" height="566">
+    </div>
+  </section>
+
+  <!-- 3: the circle becomes Lowell's Circle -->
+  <section class="frame" id="f-wheel" aria-label="The circle becomes Lowell’s Circle">
+    <div class="art">
+      <img class="wheel" src="assets/wheel.webp" alt="Lowell Thompson’s color wheel" width="800" height="800">
+      <div class="hub"><div class="brand">Lowell’s<br>Circle</div></div>
+    </div>
+  </section>
+
+  <!-- 4: WE'RE — camera moves in -->
+  <section class="frame push" id="f-were">
+    <div class="art">
+      <img class="wheel" src="assets/wheel.webp" alt="" width="800" height="800">
+      <div class="hub"><div class="w w-1">We<span class="ap">’<svg viewBox="0 0 30 40" aria-hidden="true" focusable="false"><circle cx="15" cy="14" r="14"/><path d="M29 14C29 26 21 35 4 40L3 37C11 33 14 29 15 28Z"/></svg></span>re</div></div>
+    </div>
+  </section>
+
+  <!-- 5: LOOKING -->
+  <section class="frame push" id="f-looking">
+    <div class="art">
+      <img class="wheel" src="assets/wheel.webp" alt="" width="800" height="800">
+      <div class="hub"><div class="w w-2">Looking</div></div>
+    </div>
+  </section>
+
+  <!-- 6–7: the eye chart. Lines arrive one at a time, each smaller than the last (after Floyd Webb's flyer) -->
+  <section class="frame" id="f-chart" aria-label="We’re looking for people who make things">
+    <div class="chart" id="chart">
+      <div class="ln" style="--i:0;--fs:var(--s0);--ls:var(--l0)">We<span class="ap">’<svg viewBox="0 0 30 40" aria-hidden="true" focusable="false"><circle cx="15" cy="14" r="14"/><path d="M29 14C29 26 21 35 4 40L3 37C11 33 14 29 15 28Z"/></svg></span>re looking</div>
+      <div class="ln" style="--i:1;--fs:var(--s1);--ls:var(--l1)">for people</div>
+      <div class="ln" style="--i:2;--fs:var(--s2);--ls:var(--l2)">who like to draw,</div>
+      <div class="ln" style="--i:3;--fs:var(--s3);--ls:var(--l3)">and dance and write</div>
+      <div class="ln" style="--i:4;--fs:var(--s4);--ls:var(--l4)">and take photos</div>
+      <div class="ln" style="--i:5;--fs:var(--s5);--ls:var(--l5)">and speak.</div>
+      <div class="ln" style="--i:6;--fs:var(--s6);--ls:var(--l6)"><span class="pa" style="--fs2:var(--q6a);--ls2:var(--k6a)">And the people who</span> <span class="pb" style="--fs2:var(--q6b);--ls2:var(--k6b)">support those that do.</span></div>
+      <div class="ln" style="--i:7;--fs:var(--s7);--ls:var(--l7)"><span class="pa" style="--fs2:var(--q7a);--ls2:var(--k7a)">No title, portfolio or</span> <span class="pb" style="--fs2:var(--q7b);--ls2:var(--k7b)">permission needed.</span></div>
+      <div class="ln red" style="--i:8;--fs:var(--s8);--ls:var(--l8)">You in?</div>
+      <a class="ln last" href="#signup" id="readthis" style="--i:9;--fs:var(--s9);--ls:var(--l9)">If you can read this, get in the Circle.</a>
+    </div>
+  </section>
+
+  <!-- 8: contact -->
+  <section class="frame" id="f-signup" aria-label="Sign up"><div id="signup-slot"></div></section>
+
+  <div class="controls">
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <button class="btn-ghost" id="replay" type="button">Replay</button>
+    <button class="btn-ghost" id="skip" type="button">Skip</button>
+  </div>
+</main>
+<div class="draftnote">Draft for Lowell’s review</div>
+
+<script src="signup.js"></script>
+<script>
+document.getElementById('signup-slot').innerHTML=signupMarkup('su');wireSignup('su');
+
+const frames=[...document.querySelectorAll('.frame')];
+// ms each frame stays on screen before dissolving to the next (draw, wheel, WE'RE, LOOKING, eye chart, sign-up)
+const LINE_GAP=1700, CHART_REST=3500;
+const lines=[...document.querySelectorAll('#chart .ln')];
+const hold=[7200,4800,3600,3600,lines.length*LINE_GAP+CHART_REST,0];
+const dots=document.getElementById('dots');frames.forEach(()=>dots.appendChild(document.createElement('i')));
+const sketch=document.getElementById('sketch'),hand=document.getElementById('hand');
+const R=262,L=2*Math.PI*R;sketch.style.strokeDasharray=L;sketch.style.strokeDashoffset=L;
+let timers=[],raf;
+const later=(fn,ms)=>timers.push(setTimeout(fn,ms));
+function show(i){frames.forEach((f,k)=>f.classList.toggle('on',k===i));[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===i));
+  document.getElementById('skip').style.visibility=i===frames.length-1?'hidden':'visible';}
+const TIP_X=403,TIP_Y=564; // pencil point in lowell-hand.webp (408×566)
+function placeHand(a,dx=0,dy=0){ // pen tip sits on the circle; viewBox is 640 wide
+  const box=hand.parentElement.clientWidth, k=box/640, W=box*.6, sc=W/408;
+  const x=(320+R*Math.cos(a)+dx)*k, y=(320+R*Math.sin(a)+dy)*k;
+  hand.style.width=W+'px';hand.style.height=(566*sc)+'px'; // keep the photo's proportions so the tip math holds
+  hand.style.transform=`translate(${x-TIP_X*sc}px,${y-TIP_Y*sc}px)`;}
+function drawCircle(){
+  const a0=-62*Math.PI/180;hand.style.transition='opacity .6s';hand.style.opacity=1;
+  const tIn=performance.now(),DIn=1400;          // hand reaches in from the top left
+  const enter=t=>{const k=Math.min(1,(t-tIn)/DIn),e=1-Math.pow(1-k,3);placeHand(a0,(1-e)*-300,(1-e)*-340);
+    if(k<1)raf=requestAnimationFrame(enter);else later(()=>{const t0=performance.now();raf=requestAnimationFrame(t=>draw(t,t0))},350)};
+  const D=4400;                                   // the circle is drawn slowly, stroke by stroke
+  const draw=(t,t0)=>{const k=Math.min(1,(t-t0)/D),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+    sketch.style.strokeDashoffset=L*(1-e);placeHand(a0+e*2*Math.PI);
+    if(k<1)raf=requestAnimationFrame(t2=>draw(t2,t0));else{hand.style.transition='opacity .9s';hand.style.opacity=0}};
+  raf=requestAnimationFrame(enter);
+}
+function buildChart(){lines.forEach((ln,k)=>later(()=>ln.classList.add('in'),400+k*LINE_GAP));}
+function reset(){timers.forEach(clearTimeout);timers=[];cancelAnimationFrame(raf);
+  hand.style.transition='none';hand.style.opacity=0;sketch.style.strokeDashoffset=L;lines.forEach(l=>l.classList.remove('in'));}
+function run(){reset();
+  let t=0;frames.forEach((f,i)=>{later(()=>{show(i);if(i===0)drawCircle();if(i===4)buildChart();},t);t+=hold[i];});
+}
+function skip(){reset();show(frames.length-1);document.querySelector('#su input')?.focus({preventScroll:true});}
+document.getElementById('replay').onclick=run;
+document.getElementById('skip').onclick=skip;
+document.getElementById('skipLink').onclick=e=>{e.preventDefault();skip()};
+document.getElementById('readthis').onclick=e=>{e.preventDefault();skip()};
+if(location.hash==='#signup')skip();else run();
+</script>
+</body>
+</html>
